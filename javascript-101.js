@@ -630,3 +630,48 @@ assert(isVowel("banana"), false, "Exercise 43");
 assert(isVowel("Q"), false, "Exercise 43");
 assert(isVowel("y"), false, "Exercise 43");
 addToDone("Exercise 43 is correct.")
+
+// Exercise 44
+// Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
+function hasVowels(a) {
+    var vowels = /[aeiou]/gi;
+    return vowels.test(a);
+}
+
+assert(hasVowels("banana"), true, "Exercise 44");
+assert(hasVowels("ubuntu"), true, "Exercise 44");
+assert(hasVowels("QQQQ"), false, "Exercise 44");
+assert(hasVowels("wyrd"), false, "Exercise 44");
+addToDone("Exercise 44 is correct.")
+
+
+// Exercise 45
+// Write a function definition named countVowels that takes in value and returns the count of the nubmer of vowels in a sequence.
+// function countVowels(a) {
+//   var vowels = /[aeiou]/gi;
+//   var counter = 0;
+//   var arr = a.split("");
+//   for (var i = 0; i < arr.length; i++) {
+//     if (vowels.test(arr[i])) {
+//       counter++;
+//     }
+//   }
+//   return counter;
+// }
+function countVowels(n) {
+    var counter = 0;
+    var arr = n.split("");
+    for (var i = 0; i < arr.length; i++) {
+        if (arr[i] === "a" || arr[i] === "A" || arr[i] === "e" || arr[i] === "E" || arr[i] === "i" || arr[i] === "I" || arr[i] === "O" || arr[i] === "o" || arr[i] === "u" || arr[i] === "U") {
+            counter++;
+        }
+    }
+    return counter;
+}
+assert(countVowels("banana"), 3, "Exercise 45");
+assert(countVowels("ubuntu"), 3, "Exercise 45");
+assert(countVowels("mango"), 2, "Exercise 45");
+assert(countVowels("QQQQ"), 0, "Exercise 45");
+assert(countVowels("wyrd"), 0, "Exercise 45");
+addToDone("Exercise 45 is correct.")
+
