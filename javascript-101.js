@@ -677,8 +677,18 @@ addToDone("Exercise 45 is correct.")
 
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
-function removeVowels(a) {
-    return a.replace(/[aeiou]/ig, "");
+// function removeVowels(a) {
+//     return a.replace(/[aeiou]/ig, "");
+// }
+function removeVowels(str) {
+    var vowels = "aeiou"
+    var strArr = str.split("");
+    var emptyArr = [];
+    for (var i = 0; i < strArr.length; i++) {
+        if (vowels.indexOf(strArr[i]) < 0) {
+            emptyArr.push(strArr[i]);
+        }
+    } return emptyArr.join("");
 }
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
@@ -689,13 +699,35 @@ addToDone("Exercise 46 is correct.")
 
 // Exercise 47
 // Write a function definition named startsWithVowel that takes in string and true if the string starts with a vowel
+// function startsWithVowel(str) {
+//     var vowels = /[aeiou]/gi;
+//     var arr = str.split("");
+//     return vowels.test(arr[0]);
+// }
 function startsWithVowel(str) {
-    var vowels = /[aeiou]/gi;
-    var arr = str.split("");
-    return vowels.test(arr[0]);
+    var vowels = "aeiou";
+    var strArr = str.split("");
+    if (vowels.indexOf(strArr[0]) > -1) {
+        return true;
+    } else {
+        return false;
+    }
 }
 assert(startsWithVowel("ubuntu"), true, "Exercise 47");
 assert(startsWithVowel("banana"), false, "Exercise 47");
 assert(startsWithVowel("mango"), false, "Exercise 47");
 addToDone("Exercise 47 is correct.")
 
+
+// Exercise 48
+// Write a function definition named endsWithVowel that takes in string and true if the string ends with a vowel
+function endsWithVowel (str) {
+    var vowels = ["a", "e", "i", "o", "u"];
+    var strArr = str.split("");
+    var endArr = str[str.length -1].toLowerCase();
+    if (vowels.indexOf(endArr) > -1) {
+        return true;
+    } else {
+        return false;
+    }
+}
