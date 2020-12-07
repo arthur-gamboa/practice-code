@@ -813,3 +813,52 @@ assert(last([1, 2, 3, 4]), 4, "Exercise 54");
 assert(last(["JS", "is", "awesome"]), "awesome", "Exercise 54");
 assert(last(["kiwi", "mango", "guava"]), "guava", "Exercise 54");
 addToDone("Exercise 54 is correct.")
+
+
+// Exercise 55
+// Write a function definition named secondToLast that takes in sequence and returns the second to last value of that sequence.
+function secondToLast(str) {
+    var stl = str[str.length -2];
+    return stl;
+}
+assert(secondToLast("ubuntu"), "t", "Exercise 55");
+assert(secondToLast([1, 2, 3, 4]), 3, "Exercise 55");
+assert(secondToLast(["JS", "is", "awesome"]), "is", "Exercise 55");
+assert(secondToLast(["kiwi", "mango", "guava"]), "mango", "Exercise 55");
+addToDone("Exercise 55 is correct.")
+
+
+// Exercise 56
+// Write a function definition named thirdToLast that takes in sequence and returns the third to last value of that sequence.
+function thirdToLast(str) {
+    var ttl = str[str.length -3];
+    return ttl;
+}
+assert(thirdToLast("ubuntu"), "n", "Exercise 56");
+assert(thirdToLast([1, 2, 3, 4]), 2, "Exercise 56");
+assert(thirdToLast(["JS", "is", "awesome"]), "JS", "Exercise 56");
+assert(thirdToLast(["strawberry", "kiwi", "mango", "guava"]), "kiwi", "Exercise 56");
+addToDone("Exercise 56 is correct.")
+
+
+// Exercise 57
+// Write a function definition named firstAndSecond that takes in sequence and returns the first and second value of that sequence as an array
+function firstAndSecond(str) {
+    return str.slice(0, 2);
+}
+assert(firstAndSecond([1, 2, 3, 4]), [1, 2], "Exercise 57");
+assert(firstAndSecond(["JS", "is", "awesome"]), ["JS", "is"], "Exercise 57");
+assert(firstAndSecond(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "kiwi"], "Exercise 57");
+addToDone("Exercise 57 is correct.")
+
+
+// Exercise 58
+// Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
+function firstAndLast(str) {
+    var newArr = [];
+    var arrShift = str.shift();
+    newArr.push(arrShift);
+    var arrPop = str.pop();
+    newArr.push(arrPop);
+    return newArr;
+}
