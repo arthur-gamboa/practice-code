@@ -731,3 +731,28 @@ function endsWithVowel (str) {
         return false;
     }
 }
+
+
+// Exercise 49
+// Write a function definition named startsAndEndsWithVowel that takes in string and returns true if the string starts and ends with a vowel
+function startsAndEndsWithVowel(str) {
+    if (startsWithVowel(str) && endsWithVowel(str)) {
+        return true;
+    } else {
+        return false;
+    }
+}
+// function startsAndEndWithVowel(str) {
+//   var vowels = "aeiou";
+//   var strArr = str.split("").toLowerCase();
+//   var endArr = str[str.length -1].toLowerCase();
+//   if (vowels.indexOf(strArr[0] > -1) && vowels.indexOf(endArr) > -1) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+// }
+assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
+assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
+assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
+addToDone("Exercise 49 is correct.")
