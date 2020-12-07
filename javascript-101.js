@@ -756,3 +756,14 @@ assert(startsAndEndsWithVowel("ubuntu"), true, "Exercise 49");
 assert(startsAndEndsWithVowel("banana"), false, "Exercise 49");
 assert(startsAndEndsWithVowel("mango"), false, "Exercise 49");
 addToDone("Exercise 49 is correct.")
+
+
+// Exercise 50
+// Write a function definition named first that takes in sequence and returns the first value of that sequence.
+function first(str) {
+    return str[0];
+}
+assert(first("ubuntu"), "u", "Exercise 50");
+assert(first([1, 2, 3]), 1, "Exercise 50");
+assert(first(["JS", "is", "awesome"]), "JS", "Exercise 50");
+addToDone("Exercise 50 is correct.")
