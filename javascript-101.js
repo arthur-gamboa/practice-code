@@ -855,10 +855,74 @@ addToDone("Exercise 57 is correct.")
 // Exercise 58
 // Write a function definition named firstAndLast that takes in sequence and returns the first and last value of that sequence as an array
 function firstAndLast(str) {
-    var newArr = [];
-    var arrShift = str.shift();
-    newArr.push(arrShift);
-    var arrPop = str.pop();
-    newArr.push(arrPop);
+    var newArr = [];              // *variable* empty array to store values
+    var arrShift = str.shift();   // *variable* removes first element of array and returns it
+    newArr.push(arrShift);        // adds new item to end of newArr
+    var arrPop = str.pop();       // *variable* removes last element of array and returns it
+    newArr.push(arrPop);          // adds new item to end of newArr
     return newArr;
 }
+assert(firstAndLast([1, 2, 3, 4]), [1, 4], "Exercise 58");
+assert(firstAndLast(["JS", "is", "awesome"]), ["JS", "awesome"], "Exercise 58");
+assert(firstAndLast(["strawberry", "kiwi", "mango", "guava"]), ["strawberry", "guava"], "Exercise 58");
+addToDone("Exercise 58 is correct.")
+
+
+// Exercise 59
+// Write a function definition named firstToLast that takes in sequence and returns the sequence with the first value moved to the end of the sequence.
+function firstToLast (input) {
+    var arrShift = input.shift();
+    input.push(arrShift);
+    return input;
+}
+assert(firstToLast([1, 2, 3, 4]), [2, 3, 4, 1], "Exercise 59");
+assert(firstToLast(["JS", "is", "awesome"]), ["is", "awesome", "JS"], "Exercise 59");
+assert(firstToLast(["strawberry", "kiwi", "mango", "guava"]), ["kiwi", "mango", "guava", "strawberry"], "Exercise 59");
+addToDone("Exercise 59 is correct.")
+
+
+// Exercise 60
+// Write a function definition named sumAll that takes in sequence of numbers and returns all the numbers added together.
+function sumAll(nums) {
+    var sum = 0;
+    for (var i = 0; i < nums.length; i++) {
+        sum = sum + nums[i];
+    }
+    return sum;
+}
+// function sumAll(nums) {   //nums will be an array of numbers that needs to be looped through.
+//   var sum = 0;
+//   for (var i = 0; i < nums.length; i++) {  //want to add each individual number to total.
+//     sum = sum + nums[i]  //x = 1+0, x = 2+1; x = 3+3 = 6; x = 4+6 = 10;  // sum += nums[i]
+//   }
+//   return sum;
+// }
+
+assert(sumAll([1, 2, 3, 4]), 10, "Exercise 60");
+assert(sumAll([3, 3, 3]), 9, "Exercise 60");
+assert(sumAll([0, 5, 6]), 11, "Exercise 60");
+addToDone("Exercise 60 is correct.")
+
+
+//  Exercise 61
+//  Write a function definition named mean that takes in sequence of numbers and returns the average value
+function mean(nums) {
+    var sum = 0;
+    for (var i = 0; i < nums.length; i++) {
+        sum = sum + nums[i];
+    }
+    return sum / nums.length;
+}
+// function mean(nums) {
+//   var sum = 0;
+//   for (var i = 0; i < nums.length; i++) {
+//     sum = sum + nums[i];
+//   }
+//   return sum / nums.length;
+// }
+assert(mean([1, 2, 3, 4]), 2.5, "Exercise 61");
+assert(mean([3, 3, 3]), 3, "Exercise 61");
+assert(mean([1, 5, 6]), 4, "Exercise 61");
+addToDone("Exercise 61 is correct.")
+
+
