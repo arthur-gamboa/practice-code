@@ -1,36 +1,18 @@
-// var titles = document.getElementsByClassName("row");
-//
-// console.log(Array.isArray(titles));
-// console.log(Array.isArray(Array.from(titles)));
-//
-// Array.from(titles).forEach(function(item) {
-//     console.log(item)
-// })
+const list = document.querySelector("#coffee-type ul");
 
-//*********************************************************//
+// add coffee
+const addForm = document.forms['add-coffee'];
 
-// var exElement = document.getElementsByClassName("row");
-//
-// console.log(exElement[0]);
-//
-// for (var i = 0; i < exElement.length; i++) {
-//     console.log(exElement[i]);
-// }
-//
-// var mainHeading = document.getElementById("main-heading")
-//
-// console.log(mainHeading);
+addForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    const value = addForm.querySelector('input[type="text"]').value;
+    console.log(value);
 
-//*********************************************************//
 
-//examine the document object //
-// console.dir(document);
+    //create elements
+    const li = document.createElement("li");
 
-console.log(document.domain);
-console.log(document.URL);
-console.log(document.title);
-// document.title = 123;
-console.log(document.doctype);
-console.log(document.head);
-console.log(document.body);
-console.log(document.all);
+    // add content
+    li.textContent = value;
+
+})

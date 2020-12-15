@@ -1046,7 +1046,10 @@ function onlyNegativeNumbers(num) {
     }
     return storeArr;
 }
-
+assert(onlyNegativeNumbers([1, 2, 3]), [], "Exercise 70");
+assert(onlyNegativeNumbers([-5, -4, -3, -2, -1, 1, 2, 3, 4, 5]),[-5, -4, -3, -2, -1], "Exercise 70");
+assert(onlyNegativeNumbers([-4, -3, 1]), [-4, -3], "Exercise 70");
+addToDone("Exercise 70 is correct.");
 
 // Exercise 71
 // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
@@ -1478,3 +1481,82 @@ function getAverageBookPrice(obj) {
 }
 assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
+
+
+/ Exercise 94
+// Write a function called highestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the highest priced book.
+// Hint: Much like sometimes start functions with a variable set to zero, you may want to create a object with the price set to zero to compare to each object's price in the array
+function highestPriceBook(input) {
+    const high = books.reduce(function(max, book) {
+        if (max.price > book.price) {
+            return max;
+        } else {
+            return book;
+        }
+    })
+    return high;
+}
+
+// function highestPriceBook(input) {
+//   input.sort(function(a, b) {
+//     return a.price - b.price;
+//   });
+//   return books[input.length -1];
+// }
+
+// function highestPriceBook(input) {
+//   input.sort(function(a, b) {
+//     return a.price - b.price
+//   });
+//   return books[input.length -1];
+// }
+
+// function highestPriceBook(input) {
+//   books.sort(function(a,b) {
+//     if(a.price > b.price) {
+//       return 1;
+//     } else {
+//       return -1
+//     }
+//   })
+//   return books[books.length -1];
+// }
+assert(highestPriceBook(books), {
+    "title": "The Visual Display of Quantitative Information",
+    "price": 38.00,
+    "author": "Edward Tufte"
+}, "Exercise 94");
+
+addToDone("Exercise 94 is complete")
+
+
+// Exercise 95
+// Write a function called lowestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the lowest priced book.
+// Hint: Much like sometimes start functions with a variable set to zero or float('inf'), you may want to create a object with the price set to float('inf') to compare to each object in the array
+function lowestPriceBook(input) {
+    const lowest = books.reduce(function (a, b) {
+        if (a.price < b.price) {
+            return a;
+        } else {
+            return b;
+        }
+    });
+    return lowest;
+}
+// function lowestPriceBook(input) {
+//   const low = books.reduce(function(lowest, book) {
+//     if(lowest.price < book.price) {
+//       return lowest;
+//     } else {
+//       return book;
+//     }
+//   });
+//   return low;
+// }
+
+assert(lowestPriceBook(books), {
+    "title": "Weapons of Math Destruction",
+    "author": "Cathy O'Neil",
+    "price": 17.44
+}, "Exercise 95");
+addToDone("Exercise 95 is complete.")

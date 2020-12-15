@@ -19,13 +19,24 @@
     <div class="row">
         <div class="col-md-8 text-center"><strong>Coffee Content</strong>
             <div class="row col text-left">
-                <div class="col"><br><strong>coffee 1</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, facere fugiat id ipsam libo, minus modi mollitia necessitatibus recusandae sequi totam! Culpa facere id incidunt modi nesciunt nihil reiciendis.</div>
-                <div class="col"><br><strong>coffee 2</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet asperiores autem consectetur dolor dolorem eligendi enim expedita fuga, ipsum laborum nobis, non pariatur quaerat quisquam sit temporibus ullam vel, veniam.</div>
+                <div class="col"><br>
+                    <ul id="coffee-type" style="list-style-type: none">
+                        <li>coffee 1</li>
+                        <li>coffee 2</li>
+                    </ul>
+                </div>
+                <div class="col"><br>
+                    <ul style="list-style-type: none">
+                        <li>coffee 3</li>
+                        <li>coffee 4</li>
+                    </ul>
+                </div>
+
             </div>
         </div>
 
         <div class="col-md-4">
-            <form>
+            <form id="choose-coffee">
                 <div class="form-group">
                     <label for="choose-roast"><strong>Roast</strong></label>
                     <select class="form-control form-control-sm" id="choose-roast">
@@ -36,17 +47,17 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="coffee-name"><strong>Coffee Name</strong></label>
-                    <input class="form-control form-control-sm" id="coffee-name">
-                </div>
+                <form id="search-coffee">
+                    <div class="form-group">
+                        <label><strong>Coffee Name</strong></label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Choose a coffee.." />
+                    </div>
+                    <button class="btn btn-secondary btn-sm btn-block">Submit</button><br><br>
+                </form>
             </form>
-
-            <button type="button" class="btn btn-secondary btn-sm btn-block">Submit</button><br><br>
 
             <h3 class="text-center">Add a Coffee..</h3>
 
-            <form>
                 <div class="form-group">
                     <label for="submit-roast"><strong>Roast</strong></label>
                     <select class="form-control form-control-sm" id="submit-roast">
@@ -56,13 +67,13 @@
                     </select>
                 </div>
 
-                <div class="form-group">
-                    <label for="submit-roast-name"><strong>Name</strong></label>
-                    <input class="form-control form-control-sm" id="submit-roast-name">
-                </div>
-            </form>
-
-            <button type="button" class="btn btn-secondary btn-sm btn-block">Submit</button>
+                <form id="add-coffee">
+                    <div class="form-group">
+                        <label><strong>Name</strong></label>
+                        <input type="text" class="form-control form-control-sm" placeholder="Add a coffee.." />
+                    </div>
+                        <button class="btn btn-secondary btn-sm btn-block">Submit</button><br>
+                </form>
         </div>
     </div>
 </div>
