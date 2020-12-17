@@ -1,5 +1,15 @@
 "use strict"; // leave this line here :)
 
+// Abeer below is an example of how you can ask me questions in this code
+// Yunus How do you ask qustions with code comments?
+
+/*
+ This is how you make a multi line comment
+ I think there is a way to collaborate with some tracking system but
+ so far I have not seen how to do it :(
+
+ */
+
 // Keep this function definition in order to test expected vs. actual results
 const assert = function(actual, expected, message = "") {
 
@@ -621,9 +631,13 @@ function isOneOrTwoOrThree(x) {
 // Exercise 43
 // Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
 function isVowel(a) {
-    var vowel = a.toUpperCase();
-    return vowel === "A" || vowel === "E" || vowel === "I" || vowel === "O" || vowel === "U";
+    var vowel = a.toLowerCase();
+    return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
 }
+// function isVowel(a) {
+//     var vowel = a.toUpperCase();
+//     return vowel === "A" || vowel === "E" || vowel === "I" || vowel === "O" || vowel === "U";
+// }
 assert(isVowel("a"), true, "Exercise 43");
 assert(isVowel("U"), true, "Exercise 43");
 assert(isVowel("banana"), false, "Exercise 43");
@@ -637,7 +651,6 @@ function hasVowels(a) {
     var vowels = /[aeiou]/gi;
     return vowels.test(a);
 }
-
 assert(hasVowels("banana"), true, "Exercise 44");
 assert(hasVowels("ubuntu"), true, "Exercise 44");
 assert(hasVowels("QQQQ"), false, "Exercise 44");
@@ -677,19 +690,20 @@ addToDone("Exercise 45 is correct.")
 
 // Exercise 46
 // Write a function definition named removeVowels that takes in string and returns the string without any vowels
-// function removeVowels(a) {
-//     return a.replace(/[aeiou]/ig, "");
-// }
-function removeVowels(str) {
-    var vowels = "aeiou"
-    var strArr = str.split("");
-    var emptyArr = [];
-    for (var i = 0; i < strArr.length; i++) {
-        if (vowels.indexOf(strArr[i]) < 0) {
-            emptyArr.push(strArr[i]);
-        }
-    } return emptyArr.join("");
+function removeVowels(a) {
+    return a.replace(/[aeiou]/ig, "");
 }
+
+// function removeVowels(str) {
+//     var vowels = "aeiou"
+//     var strArr = str.split("");
+//     var emptyArr = [];
+//     for (var i = 0; i < strArr.length; i++) {
+//         if (vowels.indexOf(strArr[i]) < 0) {
+//             emptyArr.push(strArr[i]);
+//         }
+//     } return emptyArr.join("");
+// }
 assert(removeVowels("banana"), "bnn", "Exercise 46");
 assert(removeVowels("ubuntu"), "bnt", "Exercise 46");
 assert(removeVowels("mango"), "mng", "Exercise 46");
@@ -1053,17 +1067,28 @@ addToDone("Exercise 70 is correct.");
 
 // Exercise 71
 // Write a function definition named hasEvens that takes in sequence of numbers and returns true if there are any even numbers in the sequence
+function hasEvens(x) {
+    var hasEvens = false;
+    x.forEach(function(element) {
+        if(element % 2 == 0) {
+            hasEvens = true;
+        }
+    });
+    return hasEvens;
+}
+
 // function hasEvens(num) {
 //   return (num.find(isEven) !== undefined);    // isEven is another function in a previous exercise.
 // }
-function hasEvens(num) {
-    var evenCounter = 0;
-    for (var i = 0; i < num.length; i++) {
-        if (num[i] % 2 === 0) {
-            evenCounter++;
-        }
-    } return evenCounter > 0;
-}
+
+// function hasEvens(num) {
+//     var evenCounter = 0;
+//     for (var i = 0; i < num.length; i++) {
+//         if (num[i] % 2 === 0) {
+//             evenCounter++;
+//         }
+//     } return evenCounter > 0;
+// }
 assert(hasEvens([1, 2, 3]), true, "Exercise 71");
 assert(hasEvens([2, 5, 6]), true, "Exercise 71");
 assert(hasEvens([3, 3, 3]), false, "Exercise 71");
@@ -1099,14 +1124,24 @@ addToDone("Exercise 72 is correct.")
 
 // Exercise 73
 // Write a function definition named hasOdds that takes in sequence of numbers and returns true if there are any odd numbers in the sequence
-function hasOdds(num) {
-    var counter = 0;
-    for (var i = 0; i < num.length; i++) {
-        if (num[i] % 2 !== 0) {
-            counter++;
+function hasOdds(x) {
+    var hasOdds = false;
+    x.forEach(function(element) {
+        if(element % 2 != 0) {
+            hasOdds = true;
         }
-    } return counter > 0;
+    });
+    return hasOdds;
 }
+// function hasOdds(num) {
+//     var counter = 0;
+//     for (var i = 0; i < num.length; i++) {
+//         if (num[i] % 2 !== 0) {
+//           return true;
+//         }
+//     }
+//   return false;
+// }
 assert(hasOdds([1, 2, 3]), true, "Exercise 73");
 assert(hasOdds([2, 5, 6]), true, "Exercise 73");
 assert(hasOdds([3, 3, 3]), true, "Exercise 73");
@@ -1298,13 +1333,19 @@ addToDone("Exercise 83 is correct.")
 
 // Exercise 84
 // Write a function definition named elementsTimesTwo that takes in an array of numbers and returns an array with each value multiplied by 2.
-function elementsTimesTwo(num) {
-    var storeArr = [];
-    for (var i = 0; i < num.length; i++) {
-        storeArr.push(num[i] * 2);
+function elementsTimesTwo(input) {
+    for(var i = 0; i < input.length; i++) {
+        input[i] = input[i] * 2;
     }
-    return storeArr;
+    return input;
 }
+// function elementsTimesTwo(num) {
+//     var storeArr = [];
+//     for (var i = 0; i < num.length; i++) {
+//         storeArr.push(num[i] * 2);
+//     }
+//     return storeArr;
+// }
 assert(elementsTimesTwo([1, 2, 3]), [2, 4, 6], "Exercise 84")
 assert(elementsTimesTwo([0, 0, 0]), [0, 0, 0], "Exercise 84")
 assert(elementsTimesTwo([5, 10, 15]), [10, 20, 30], "Exercise 84")
@@ -1313,12 +1354,8 @@ addToDone("Exercise 84 is correct.")
 
 // Exercise 85
 // Write a function named flatten that takes in an array of arrays. Return the flattened array.
-function flatten(arr) {
-    var storeArr = [];
-    for (var i = 0; i < arr.length; i++) {
-        storeArr.push(...arr[i]);
-    }
-    return storeArr;
+function flatten(input) {
+    return input.flat();
 }
 // function flatten(arr) {
 //   var storeArr = [];
@@ -1483,7 +1520,7 @@ assert(getAverageBookPrice(books), 30.725, "Exercise 93");
 addToDone("Exercise 93 is complete.")
 
 
-/ Exercise 94
+// Exercise 94
 // Write a function called highestPriceBook that takes in the above defined array of objects "books" and returns the object containing the title, price, and author of the book with the highest priced book.
 // Hint: Much like sometimes start functions with a variable set to zero, you may want to create a object with the price set to zero to compare to each object's price in the array
 function highestPriceBook(input) {
@@ -1554,13 +1591,44 @@ function lowestPriceBook(input) {
 //   return low;
 // }
 
-
 assert(lowestPriceBook(books), {
     "title": "Weapons of Math Destruction",
     "author": "Cathy O'Neil",
     "price": 17.44
 }, "Exercise 95");
 addToDone("Exercise 95 is complete.")
+
+
+const shoppingCart = {
+    "tax": .08,
+    "items": [
+        {
+            "title": "orange juice",
+            "price": 3.99,
+            "quantity": 1
+        },
+        {
+            "title": "rice",
+            "price": 1.99,
+            "quantity": 3
+        },
+        {
+            "title": "beans",
+            "price": 0.99,
+            "quantity": 3
+        },
+        {
+            "title": "chili sauce",
+            "price": 2.99,
+            "quantity": 1
+        },
+        {
+            "title": "chocolate",
+            "price": 0.75,
+            "quantity": 9
+        }
+    ]
+}
 
 
 // Exercise 96
@@ -1577,8 +1645,84 @@ addToDone("Exercise 96 is complete")
 // Write a function named numberOfItemTypes that takes in the shopping cart as input and returns the number of unique item types in the shopping cart.
 // We're not yet using the quantity of each item, but rather focusing on determining how many different types of items are in the cart.
 function numberOfItemTypes(input) {
-    return shoppingCart.items.length;
+    return input.items.length;
 }
 assert(numberOfItemTypes(shoppingCart), 5, "Exercise 97");
 addToDone("Exercise 97 is complete.")
 
+
+// Exercise 98
+// Write a function named totalNumberOfItems that takes in the shopping cart as input and returns the total number all item quantities.
+// This should return the sum of all of the quantities from each item type
+function totalNumberOfItems(input) {
+    return input.items[0].quantity + input.items[1].quantity + input.items[2].quantity + input.items[3].quantity + input.items[4].quantity;
+}
+
+// function totalNumberOfItems(input) {
+//   var count = 0;
+//   for (var i = 0; i < input.items.length; i++) {
+//     count += input.items[i].quantity;
+//   }
+//   return count;
+// }
+assert(totalNumberOfItems(shoppingCart), 17, "Exercise 98");
+addToDone("Exercise 98 is complete.")
+
+
+// Exercise 99
+// Write a function named getAverageItemPrice that takes in the shopping cart as an input and returns the average of all the item prices.
+// Hint - This should determine the total price divided by the number of types of items. This does not account for each item type's quantity.\
+function getAverageItemPrice(input) {
+    return input.item[0].price + input.items[1].price + input.item[2].price + input.items[3].price + input.items[4].price / input.items.length;
+}
+
+// function getAverageItemPrice(input) {
+//   var count = 0;
+//   for (var i = 0; i < input.items.length; i++) {
+//     count = count + input.items[i].price;
+//   }
+//   return count / input.items.length;
+// }
+// assert(getAverageItemPrice(shoppingCart), 2.1420000000000003, "Exercise 99");
+addToDone("Exercise 99 is complete.")
+
+
+// Exercise 100
+// Write a function named getAverageSpentPerItem that takes in the shopping cart and returns the average of summing each item's quanties times that item's price.
+// Hint: You may need to set an initial total price and total total quantity to zero, then sum up and divide that total price by the total quantity
+function getAverageSpentPerItem(input) {
+    var totalP = 0;
+    var totalQ = 0;
+    for (var i = 0; i < input.items.length; i++) {
+        totalP = totalP + input.items[i].price * input.items[i].quantity;;
+        totalQ = totalQ + input.items[i].quantity;
+    }
+    return totalP / totalQ;
+}
+assert(getAverageSpentPerItem(shoppingCart), 1.333529411764706, "Exercise 100");
+addToDone("Exercise 100 is complete.")
+
+
+// Exercise 101
+// Write a function named mostSpentOnItem that takes in the shopping cart as input and returns the object associated with the item that has the highest price*quantity.
+// Be sure to do this as programmatically as possible.
+// Hint: Similarly to how we sometimes begin a function with setting a variable to zero, we need a starting place:
+// Hint: Consider creating a variable that is a object with the keys "price" and "quantity" both set to 0. You can then compare each item's price and quantity total to the one from "most"
+function mostSpentOnItem(input) {
+    var totalP = 0;
+    var highestObj = {};
+    for (var i = 0; i < input.items.length; i++) {
+        var currentP = input.items[i].price * input.items[i].quantity;
+        if (currentP > totalP) {
+            totalP = currentP
+            highestObj = input.items[i];
+        }
+    }
+    return highestObj;
+}
+assert(mostSpentOnItem(shoppingCart), {
+    "title": "chocolate",
+    "price": 0.75,
+    "quantity": 9
+}, "Exercise 101");
+addToDone("Exercise 101 is complete.")
