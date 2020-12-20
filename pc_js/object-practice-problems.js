@@ -2,7 +2,8 @@
 // Write a function called findWeapon that accepts a D&D character object and
 // returns a string of the name of their weapon
 
-function here(){
+function findWeapon(input) {
+
 }
 var playerOne = {
     name: "Murder Hobo",
