@@ -3,8 +3,9 @@
 // returns a string of the name of their weapon
 
 function findWeapon(input) {
-
+   return input.inventory[2].itemName;
 }
+
 var playerOne = {
     name: "Murder Hobo",
     class: "Barbarian",
@@ -89,5 +90,5 @@ var rectanglesTwo = [
     {height: 5, width: 6, color: "green"}
     ]
 
-console.log(findLargest(rectanglesOne))
-console.log(findLargest(rectanglesTwo))
+// console.log(findLargest(rectanglesOne))
+// console.log(findLargest(rectanglesTwo))
