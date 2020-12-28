@@ -555,10 +555,13 @@ cc(2); cc(3); cc(7); cc('K'); cc('A');
 //*****************************************//
 //71.//
 var myDog = {
-// Only change code below this line
+“name”: “Joe”,
+“legs”: 4,
+“tails”: 1,
+“friends”:[“many”, “Ade”]
 
-
-// Only change code above this line
 };
+
+
 //*****************************************//
 //72.//
