@@ -611,4 +611,16 @@ function cc(card) {
 }
 
 cc(2); cc(3); cc(7); cc('K'); cc('A');
+//*****************************************//
+//71.//
+var myDog = {
+// Only change code below this line
+    "name": "Pam",
+    "legs": 4,
+    "tails": 1,
+    "friends": ["humans", "bones"]
 
+// Only change code above this line
+};
+//*****************************************//
+//72.//
