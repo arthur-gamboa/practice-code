@@ -706,12 +706,12 @@ function phoneticLookup(val) {
 
     // Only change code below this line
     var lookup = {
-        "alpha": "Adams",
-        "bravo": "Boston",
-        "charlie": "Chicago",
-        "delta": "Denver",
-        "echo": "Easy",
-        "foxtrot": "Frank"
+        alpha: "Adams",
+        bravo: "Boston",
+        charlie: "Chicago",
+        delta: "Denver",
+        echo: "Easy",
+        foxtrot: "Frank"
     }
     result = lookup[val];
     // Only change code above this line
@@ -721,3 +721,14 @@ function phoneticLookup(val) {
 phoneticLookup("charlie");
 //*****************************************//
 //78.//
+function checkObj(obj, checkProp) {
+    // Only change code below this line
+    if (obj.hasOwnProperty(checkProp)) {
+        return obj[checkProp];
+    } else {
+        return "Not Found";
+    }
+    // Only change code above this line
+}
+//*****************************************//
+//79.//
