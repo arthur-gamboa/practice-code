@@ -732,3 +732,69 @@ function checkObj(obj, checkProp) {
 }
 //*****************************************//
 //79.//
+var myMusic = [
+    {
+        "artist": "Billy Joel",
+        "title": "Piano Man",
+        "release_year": 1973,
+        "formats": [
+            "CD",
+            "8T",
+            "LP"
+        ],
+        "gold": true
+    },
+    // Add a record here
+    {
+        "artist": "Metallica",
+        "title": "Reloaded",
+        "release_year": 1995,
+        "formats": [
+            "CD",
+            "Cassette"
+        ],
+    }
+];
+//*****************************************//
+//80.//
+// Setup
+var myStorage = {
+    "car": {
+        "inside": {
+            "glove box": "maps",
+            "passenger seat": "crumbs"
+        },
+        "outside": {
+            "trunk": "jack"
+        }
+    }
+};
+
+var gloveBoxContents = myStorage.car.inside["glove box"]; // Change this line
+//*****************************************//
+//81.//
+// Setup
+var myPlants = [
+    {
+        type: "flowers",
+        list: [
+            "rose",
+            "tulip",
+            "dandelion"
+        ]
+    },
+    {
+        type: "trees",
+        list: [
+            "fir",
+            "pine",
+            "birch"
+        ]
+    }
+];
+
+// Only change code below this line
+
+var secondTree = myPlants[1].list[1]; // Change this line
+//*****************************************//
+//82.//
