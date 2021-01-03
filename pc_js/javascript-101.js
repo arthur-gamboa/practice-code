@@ -631,9 +631,13 @@ function isOneOrTwoOrThree(x) {
 // Exercise 43
 // Write a function definition named isVowel that takes in value and returns true if the value is a, e, i, o, u in upper or lower case.
 function isVowel(a) {
-    var vowel = a.toLowerCase();
-    return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+    var vowels = ["a", "e", "i", "o", "u"];
+    return vowels.indexOf(a.toLowerCase()) !== -1;
 }
+// function isVowel(a) {
+//     var vowel = a.toLowerCase();
+//     return vowel === "a" || vowel === "e" || vowel === "i" || vowel === "o" || vowel === "u"
+// }
 // function isVowel(a) {
 //     var vowel = a.toUpperCase();
 //     return vowel === "A" || vowel === "E" || vowel === "I" || vowel === "O" || vowel === "U";
