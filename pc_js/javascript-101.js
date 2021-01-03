@@ -652,9 +652,19 @@ addToDone("Exercise 43 is correct.")
 // Exercise 44
 // Write a function definition named hasVowels that takes in value and returns true if the string contains any vowels.
 function hasVowels(a) {
-    var vowels = /[aeiou]/gi;
-    return vowels.test(a);
+    var vowels = ["a", "e", "i", "o", "u"];
+    var arr = a.split("");
+    for (var i = 0; i < a.length; i++) {
+        if (vowels.indexOf(arr[i]) !== -1) {
+            return true;
+        }
+    } return false;
 }
+// or...
+// function hasVowels(a) {
+//     var vowels = /[aeiou]/gi;
+//     return vowels.test(a);
+// }
 assert(hasVowels("banana"), true, "Exercise 44");
 assert(hasVowels("ubuntu"), true, "Exercise 44");
 assert(hasVowels("QQQQ"), false, "Exercise 44");
