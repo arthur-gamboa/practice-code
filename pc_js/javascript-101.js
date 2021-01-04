@@ -759,6 +759,11 @@ function endsWithVowel (str) {
         return false;
     }
 }
+assert(endsWithVowel("ubuntu"), true, "Exercise 48");
+assert(endsWithVowel("banana"), true, "Exercise 48");
+assert(endsWithVowel("mango"), true, "Exercise 48");
+assert(endsWithVowel("spinach"), false, "Exercise 48");
+addToDone("Exercise 48 is correct.")
 
 
 // Exercise 49
