@@ -7,7 +7,7 @@
 <body>
 <div class="container">
     <div id="main">
-        <input type="text" id="input">
+        <input id="input">
         <button id="add-to-list">Add to List</button>
 
         <h4>Favorite Food:</h4>
@@ -31,25 +31,36 @@
 
 <script src="pc_js/jquery-2.2.4.js"></script>
 <script>
-    $('#add-to-list').click(function() {
-        var favs = $('#input').val();
-        console.log(favs);
-        $('#favorite-food').append("<li>" + favs + "</li>");
-    });
-    $('#change-me').dblclick(function() {
-        $(this).css("background-color", "purple");
-    });
-    $('#change-cohort').click(function() {
-        var newCohort = $("#cohort-name").val();
-        $("#my-cohort").html("");
-        $("#my-cohort").html(newCohort);
-    });
-    $("#change-to-red").click(function() {
-        $("#my-cohort").toggleClass("highlight");
-    });
-    setTimeout(function() {
-        $(".container").css({"background-color": "pink"});
-    }, 4000);
+
+     $('#add-to-list').click(function() {
+         var favs = $('#input').val();
+         console.log(favs);
+         $('#favorite-food').append("<li>" + favs + "</li>");
+     });
+     $('#change-me').dblclick(function() {
+         $(this).css("background-color", "purple");
+     });
+     $('#change-cohort').click(function() {
+         var newCohort = $("#cohort-name").val();
+         $("#my-cohort").html("");
+         $("#my-cohort").html(newCohort);
+     });
+     $("#highlight").click(function() {
+         $("#my-cohort").css("background-color", "yellow");
+     });
+     $("#favorite-food").on("click", "li", function() {
+         if ($(this).hasClass("selected")) {
+             $(this).removeClass("selected")
+             $(this).css("background", "none");
+         } else {
+             $(this).addClass("selected")
+             $(this).css("background", "yellow");
+         }
+     })
+     setTimeout(function() {
+         $(".container").css("background-color", "lightblue");
+     }, 4000);
+
 </script>
 </body>
 </html>
