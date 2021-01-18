@@ -1,14 +1,3 @@
-header {
-    /*background-image: url("../pc_img/coffee_top.jpg");*/
-    font-family: "Nunito", sans-serif;
-    background-size: cover;
-    color: navajowhite;
-}
-
-body {
-    background-image: url("../pc_img/coffee_background.jpg");
-    font-family: "Nunito", sans-serif;
-    background-repeat: no-repeat;
-    background-size: cover;
-    color: white;
+.row {
+    text-align: center;
 }

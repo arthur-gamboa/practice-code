@@ -12,71 +12,15 @@
 </head>
 <body>
 
-<div class="container">
-
-    <header id="main-heading" class="main-heading text-center"><h1>Wake up with a cup.</h1></header><hr>
-
-    <div class="row">
-        <div class="col-md-8 text-center"><strong>Coffee Content</strong>
-            <div class="row col text-left">
-                <div class="col"><br>
-                    <ul id="coffee-type" style="list-style-type: none">
-                        <li>coffee 1</li>
-                        <li>coffee 2</li>
-                    </ul>
-                </div>
-                <div class="col"><br>
-                    <ul style="list-style-type: none">
-                        <li>coffee 3</li>
-                        <li>coffee 4</li>
-                    </ul>
-                </div>
-
-            </div>
-        </div>
-
-        <div class="col-md-4">
-            <form id="choose-coffee">
-                <div class="form-group">
-                    <label for="choose-roast"><strong>Roast</strong></label>
-                    <select class="form-control form-control-sm" id="choose-roast">
-                        <option>all</option>
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
-                    </select>
-                </div>
-
-                <form id="search-coffee">
-                    <div class="form-group">
-                        <label><strong>Coffee Name</strong></label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Choose a coffee.." />
-                    </div>
-                    <button class="btn btn-secondary btn-sm btn-block">Submit</button><br><br>
-                </form>
-            </form>
-
-            <h3 class="text-center">Add a Coffee..</h3>
-
-                <div class="form-group">
-                    <label for="submit-roast"><strong>Roast</strong></label>
-                    <select class="form-control form-control-sm" id="submit-roast">
-                        <option>light</option>
-                        <option>medium</option>
-                        <option>dark</option>
-                    </select>
-                </div>
-
-                <form id="add-coffee">
-                    <div class="form-group">
-                        <label><strong>Name</strong></label>
-                        <input type="text" class="form-control form-control-sm" placeholder="Add a coffee.." />
-                    </div>
-                        <button class="btn btn-secondary btn-sm btn-block">Submit</button><br>
-                </form>
-        </div>
+<nav class="navbar navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand">Movie App</a>
+        <form class="d-flex">
+            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+            <button class="btn btn-outline-success" type="submit">Search</button>
+        </form>
     </div>
-</div>
+</nav>
 
 <script src="pc_js/bootstrap-practice-DOM.js"></script>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
