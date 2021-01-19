@@ -7,6 +7,7 @@ const url = "https://purple-tidal-pullover.glitch.me/movies";
 fetch(url).then(function(response) {
     response.json().then(function(data) {
         console.log(data);
+        $("#movie-area").html(showMovies(data));
     })
 })
 
