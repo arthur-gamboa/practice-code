@@ -1,52 +1,98 @@
-
-//***** Fetch All Movies *****//
-
-// const url = "https://purple-tidal-pullover.glitch.me/movies/";
-// fetch(url, options).then(function(response) {
-//     response.json().then(function(data) {
-//         console.log(data);
-//     })
-// })
-
-const movieObj = {
-    title: "Random Movie 2",
-    rating: "3.5",
-    poster: "https://api.themoviedb.org/3/movie/{movie_id}/images?api_key=<<api_key>>&language=en-US",
-    year: "2020",
-    genre: "Drama, Action, Sci-Fi",
-    director: "Random Guy",
-    plot: "Only one random guy, with only on random gun and one random problem. With options randomized, Randy Randomson thinks he can choose his destiny, but..it's just random.",
-    actors: "Random Guy, Random Girl, Random Dude, Random Baby",
-    id: 1
-};
-
-const options = {
-    method: 'PUT',
-    headers: {
-        'Content-Type': 'application/json',
-    },
-    body: JSON.stringify(movieObj),
-};
-
-// const url = "https://purple-tidal-pullover.glitch.me/movies";
-// fetch(url, options).then(function(response) {
-//     response.json().then(function(data) {
-//         console.log(data);
-//     })
-// })
-
+const allURL = `https://api.themoviedb.org/3/search/movie?api_key=${movieKey}&query=`;
+const posterURL = "https://image.tmdb.org/t/p/w400";
 const url = "https://purple-tidal-pullover.glitch.me/movies";
+
+
+// ===================== Log All Movies =====================//
 fetch(url).then(function(response) {
     response.json().then(function(data) {
-        $("#movie-area").html(showMovies(data));
+        console.log(data);
     })
 })
 
+//===================== Edit Movie =====================//
+const editMovie = (id) => fetch(`${url}/${id}`, {
+    method: 'PUT',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(movieObj),
+
+}).then(response => response.json()
+).then(() => {
+    render();
+}).catch(error => console.log(error));
+
+
+//===================== Delete Movie =====================//
+const deleteMovie = (id) => fetch(`${url}/${id}`, {
+    method: 'DELETE',
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}).then(response => response.json()
+).then(() => {
+    render();
+}).catch(error => console.log(error));
+
+
+// // ===================== Delete Multiple Movies =====================//
+// function deleteAll(id) {
+//     fetch(url+id,options).then(response => response.json().then(console.log))
+// }
+// for(let i = 10; i < 67; i++) {
+//     deleteAll(i);
+// }
+
+
+const movieObj = {
+    title: "Random Movie",
+    rating: "4.5",
+    poster: "https://d13ezvd6yrslxm.cloudfront.net/wp/wp-content/images/zootopia-oscarparody-poster2.jpg",
+    year: "2021",
+    genre: "Drama, Action, Sci-Fi",
+    director: "Random",
+    plot: "Only one random person, with only on random gun and one random problem.",
+    actors: "Random, Random, Random, Random Baby",
+    id: 1
+};
+
+// const options = {
+//     method: 'GET',
+//     headers: {
+//         'Content-Type': 'application/json',
+//     },
+//     body: JSON.stringify(movieObj),
+// };
+//
+// const url = "https://purple-tidal-pullover.glitch.me/movies/1";
+// fetch(url, options).then(function(response) {
+//     response.json().then(function(data) {
+//         console.log(data);
+//     })
+// })
+//
+// const url = "https://purple-tidal-pullover.glitch.me/movies";
+// fetch(url).then(function(response) {
+//     response.json().then(function(data) {
+//         $("#movie-area").html(showMovies(data));
+//     })
+// })
+
+// function render(obj) {
+//     return `<div class="card">
+//                 <h1>${obj.title}</h1>
+//                 <img src=${obj.poster}>
+//             </div>`
+// }
+
 function render(obj) {
-    return `<div class="card">
-                <h1>${obj.title}</h1>
-                <img src=${obj.poster}>
-            </div>`
+    return '<div class="card" style="width: 12rem;"> <div class="card-body"></div>' +
+        '<h6 class="card-title" id="current-date">' + `<h1>${obj.title}</h1>` + '</h6>' +
+
+        '<h5 class="card-text" id="location">' + '<h5>' + obj.rating + ", " + obj.plot + "</h5>" +
+
+        `<img src=${allURL+posterURL}`
 }
 
 function showMovies(arr) {
@@ -56,10 +102,3 @@ function showMovies(arr) {
     }
     return html;
 }
-
-// function deleteAll(id) {
-//     fetch(url+id,options).then(response => response.json().then(console.log))
-// }
-//     for(let i = 4; i < 67; i++) {
-//         deleteAll(i);
-//     }
